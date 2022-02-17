@@ -1,0 +1,268 @@
+<form [formGroup]="form" (ngSubmit)="addWorker()" class="form-sample">
+    <ng-container *ngIf="visible1">
+        <div class="text-right">
+            <button type="submit" class="btn btn-inverse-success btn-fw">Add
+                worker</button>
+        </div>
+    </ng-container>
+    <br>
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">{{nameCompany}}</h4>
+
+                <div class="row">
+                    <h4 class="card-title text-center">Add Workers</h4>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="fullName">Full name of worker</label>
+                            <div id="the-basics">
+                                <input formControlName="fullName" id="fullName" name="fullName" type="text"
+                                    class="typeahead form-control" placeholder="Enter the name of worker..." required
+                                    autofocus />
+                                <small *ngIf="exformFunction.fullName.invalid && exformFunction.fullName.touched"
+                                    class="text-danger" required autofocus> Name of your worker is Required !
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="GrossSalary">Gross salary</label>
+                            <div id="bloodhound">
+                                <input formControlName="GrossSalary" name="GrossSalary" id="GrossSalary"
+                                    class="typeahead form-control" type="number" placeholder="Gross salary please..."
+                                    required autofocus>
+                                <small *ngIf="exformFunction.GrossSalary.invalid && exformFunction.GrossSalary.touched"
+                                    class="text-danger" required autofocus> Enter the cost of one hour site !
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="professionWorker">Profession worker</label>
+                            <div id="the-basics">
+                                <input formControlName="professionWorker" name="professionWorker" id="professionWorker"
+                                    class="typeahead form-control" type="text" placeholder="Profession worker..."
+                                    required autofocus>
+                                <small
+                                    *ngIf="exformFunction.professionWorker.invalid && exformFunction.professionWorker.touched"
+                                    class="text-danger" required autofocus> Enter the profession worker !
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="departName">Department name</label>
+                            <div id="bloodhound">
+                                <select formControlName="departName" name="departName" id="departName"
+                                    class="form-control" required autofocus>
+                                    <option selected="selected" disabled>Chose a department</option>
+                                    <option>.......</option>
+                                    <option>.......</option>
+                                    <option>.......</option>
+                                    <option>.......</option>
+                                </select>
+                            </div>
+                            <small *ngIf="exformFunction.departName.invalid && exformFunction.departName.touched"
+                                class="text-danger" required autofocus> Department include this worker !
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col">
+                            <label for="professionCoefficient">Profit Coefficient</label>
+                            <div id="the-basics">
+                                <input formControlName="professionCoefficient" name="professionCoefficient"
+                                    id="professionCoefficient" class="typeahead form-control" type="number"
+                                    placeholder="2.5..." required autofocus>
+                                <small
+                                    *ngIf="exformFunction.professionCoefficient.invalid && exformFunction.professionCoefficient.touched"
+                                    class="text-danger" required autofocus> Enter the profession worker !
+                                </small>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="profileWorker">Profile Worker</label>
+                            <input type="file" name="img[]" class="file-upload-default">
+                            <div class="input-group col-xs-12">
+                                <input type="text" class="form-control file-upload-info" disabled
+                                    placeholder="{{imageProfileForUser}}">
+                                <span class="input-group-append">
+                                    <input formControlName="profileWorker" id="profileWorker" name="profileWorker"
+                                        type="file" style="display: none" #file (change)="onFileChange($event)" required
+                                        autofocus />
+                                    <button type="button" class="btn" (click)="file.click()"
+                                        class="file-upload-browse btn btn-primary"> Browse </button>
+                                </span>
+                                <small
+                                    *ngIf="exformFunction.profileWorker.invalid && exformFunction.profileWorker.touched"
+                                    class="text-danger" required autofocus> Picture profile of your worker is required !
+                                </small>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title text-center">All Workers</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>
+                                Worker
+                            </th>
+                            <th>
+                                Full Name
+                            </th>
+                            <th>
+                                Profession
+                            </th>
+                            <th>
+                                Department Name
+                            </th>
+                            <th>
+                                Profit Coefficient
+                            </th>
+                            <th>
+                                Gross Salary
+                            </th>
+                            <th>
+                                Delete
+                            </th>
+                            <th>
+                                Edit
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let lisawic of listWorkerInCompany">
+                            <td class="py-1">
+                                <img src="{{lisawic[6]}}" alt="image" />
+                            </td>
+                            <td>
+                                {{lisawic[1]}}
+                            </td>
+                            <td>
+                                {{lisawic[2]}}
+                            <td>
+                                {{lisawic[3]}}
+                            </td>
+                            <td>
+                                {{lisawic[4]}}
+                            </td>
+                            <td>
+                                {{lisawic[8]}}
+                            </td>
+                            <td>
+                                <a (click)="deleteAnCompte(lisawic[0],lisawic[1])"><i class="mdi mdi-delete"
+                                        style="font-size: 2em;"></i></a>
+                            </td>
+                            <td>
+                                <a
+                                    (click)="editAnCompte(lisawic[6],lisawic[1],lisawic[2],lisawic[3],lisawic[4],lisawic[8],lisawic[0])"><i
+                                        class="mdi mdi-table-edit me-5" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal" style="font-size: 2em;"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- <div class="modal-header">
+                            <h5 class="modal-title text-danger" id="exampleModalLabel">Login
+                                Form</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning"
+                                data-bs-dismiss="modal">Close</button>
+                        </div> -->
+                            <div class="modal-header">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <h4 class="card-title centertext"><i>Edit information of Worker</i></h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title centertext">Worker Profile</h4>
+                    
+                                <div class="image-upload text-center">
+                                    <label for="file-input2">
+                                        <img src="{{userProfileImage}}" width="250" />
+                                    </label>
+                                    <input id="file-input2" class="custom-file-input" name="file-input2" type="file" (change)="onFileChange2($event)" />
+                    
+                                </div>
+                                <div class="col-md-8">
+                                    <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+                                        [resizeToWidth]="256" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+                                        (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
+                                    </image-cropper>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Full Name</label>
+                                    <input [(ngModel)]="fullNameWorker" type="text"  class="typeahead" id="exampleInputUsername1"
+                                    value="fullNameWorker"
+                                    >
+                                </div>
+
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <label>Salary</label>
+                                        <div id="the-basics">
+                                            <input class="typeahead" type="number
+                                        " [(ngModel)]="salaryWorker" value="salaryWorker">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label>Profit Coefficient</label>
+                                        <div id="bloodhound">
+                                            <input class="typeahead" type="number" [(ngModel)]="profitCofficientWorker" value="profitCofficientWorker">
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Profession</label>
+                                    <input [(ngModel)]="professionWorker" value="professionWorker" type="text" class="typeahead" id="exampleInputUsername1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputUsername1">Department Name</label>
+                                    <input [(ngModel)]="departmentNameWorker" value="departmentNameWorker" type="text" class="typeahead" id="exampleInputUsername1">
+                                </div>
+                                
+                                <button type="button" (click)="updateInformationClient()" class="btn btn-info container" data-bs-dismiss="modal">Edit Information</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

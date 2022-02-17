@@ -1,0 +1,160 @@
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- <div class="image-container set-full-height"
+    style="background-image: url('../../../assets/backGroundPageLogin2.jpg')"> -->
+  <div>
+    <!--  Made With Paper Kit  -->
+    <a href="" class="made-with-pk">
+      <div class="brand">XE</div>
+      <div class="made-with">Made with <strong>Xenophne-IT</strong></div>
+    </a>
+
+    <br>
+    <br>
+    <!--   Big container   -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+
+          <!--      Wizard container        -->
+          <div class="wizard-container">
+
+            <div class="card wizard-card" data-color="blue" id="wizardProfile">
+              <form [formGroup]="form" (ngSubmit)="clicksub()">
+                <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
+
+                <div class="wizard-header text-center">
+                  <a href="index.html">
+                    <img src="../../../assets/img/micaloLogo.png" height="100">
+                  </a>
+                  <br>
+                  <h3 class="wizard-title">Login</h3>
+
+                  <br>
+                  <div class="row">
+                    <br />
+                    <!-- <div class="col-sm-4 col-sm-offset-1">
+                      <div class="picture-container">
+                        <div class="picture">
+                          <webcam [height]="0" [width]="0" [trigger]="triggerObservable"
+                            (imageCapture)="handleImage($event)">
+                          </webcam>
+
+                          <img src="{{imageUserData}}" class="picture-src" id="wizardPicturePreview" alt="Red dot"
+                            title="" />
+                        </div>
+                        <h5><a (click)="triggerSnapshot();">with your face</a></h5>
+                      </div>
+                    </div> -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="col-sm-10">
+                      <div class="form-group">
+                        <label class="labelText" for="firstName">Email address</label>
+                        <input formControlName="emailAdress" id="emailAdress" type="email" class="form-control"
+                          name="emailAdress" placeholder="Enter Email..." required autofocus>
+                        <small *ngIf="exformFunction.emailAdress.invalid && exformFunction.emailAdress.touched"
+                          class="text-danger labelText" required autofocus>Your mail adress please!
+                        </small>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="labelText" for="lastName">Password</label>
+                        <input formControlName="passwordUser" id="passwordUser" name="passwordUser" type="password"
+                          class="form-control" placeholder="Enter Password..." required autofocus>
+                        <small *ngIf="exformFunction.emailAdress.invalid && exformFunction.emailAdress.touched"
+                          class="text-danger labelText" required autofocus>Your password please!
+                        </small>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <p class="text-center">By signing up you accept our <a href="#">Terms Of Use</a></p>
+                      <div class="col-md-12 text-center ">
+                        <button type="submit" class="btn btn-primary btn-round" data-bs-toggle="modal"
+                          data-bs-target="#myModal">Login</button>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 ">
+                      <div class="login-or">
+                        <hr class="hr-or">
+                        <span class="span-or">or</span>
+                      </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                      <p class="text-center">
+                        <a href="javascript:void();" class="google btn mybtn"><i class="fa fa-google-plus">
+                          </i> Signup using Google
+                        </a>
+                      </p>
+                    </div>
+                    <div class="form-group">
+                      <p class="text-center">Don't have account? <a href="#" [routerLink]="['/PageSignUp']"
+                          routerLinkActive="active">Sign up here</a></p>
+                    </div>
+
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div> <!-- wizard container -->
+        </div>
+      </div><!-- end row -->
+    </div> <!--  big container -->
+    <form [formGroup]="form1" (ngSubmit)="clicksub1()">
+      <div class="container mt-5">
+        <div class="modal" id="{{myModal}}">
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <br><br>
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  Welcome In MiCalo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <div class="text-center">
+                    We just sent a confirmation code over to your phone<br>
+                    <label>{{phoneNumber}}</label>
+                  </div>
+                  <div class="form-group">
+                    <input formControlName="codeNotif" id="codeNotif" name="codeNotif" type="number"
+                      class="form-control" placeholder="Enter Code 4 digits..." required autofocus>
+                    <small *ngIf="exformFunction1.codeNotif.invalid && exformFunction1.codeNotif.touched"
+                      class="text-danger" required autofocus>Code Notification please!
+                    </small>
+                  </div>
+                  <div class="text-center">
+                    Didn't work? <u><i><label href="#" (click)="sendAnotherCode()">Send me another
+                          code</label></i></u>.<br>
+                    Need Help?<br><br>
+                    <button type="button" (click)="clicksub1()" class="btn btn-primary" data-bs-dismiss="modal">Check
+                      the code</button>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

@@ -1,0 +1,183 @@
+<div class="col-12 grid-margin">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-sample">
+                <div class="row">
+                    <h4 class="card-title text-center">Third Step to create offre</h4>
+
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label>Id-Offre</label>
+                            <div class="col-sm-9">
+                                <input #box (keyup.enter)="onEnter(box.value)" type="text" class="form-control"
+                                    class="typeahead" placeholder="Enter your id Offre..." />
+                            </div>
+
+                        </div>
+                        <ng-container *ngIf="visible1">
+                            <div class="col-lg-12 grid-margin stretch-card">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Quantité Hours Of work
+                                                </th>
+                                                <th>
+                                                    Glob. Proposal Price
+                                                </th>
+                                                <th>
+                                                    Glob. Revient Price
+                                                </th>
+                                                <th>
+                                                    Glob. Costs
+                                                </th>
+                                                <th>
+                                                    Glob. Gross margin
+                                                </th>
+                                                <th>
+                                                    Glob. Net Margin
+                                                </th>
+                                                <th>
+                                                    Glob. Net Margin 
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of informationGlobOff">
+                                                <td class="py-1">
+                                                    {{item[4]}} days
+                                                </td>
+                                                <td>
+                                                    {{item[2]}}
+                                                </td>
+                                                <td>
+                                                    {{item[3]}}
+                                                </td>
+                                                <td>
+                                                    {{item[1]}}
+                                                </td>
+                                                <td>
+                                                    {{item[6]}}
+                                                </td>
+                                                <td>
+                                                    {{item[5]}}
+                                                </td>
+                                                <td>
+                                                    {{item[7]}} %
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </ng-container>
+                        <!--We will add button browser for the image of worker in this div-->
+                    </div>
+                    <br><br>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <!-- <ng-container *ngIf="visible2">
+        <div class="text-right">
+            <button type="button" class="btn btn-inverse-success btn-fw mdi mdi-checkbox-marked-circle-outline"> Validate the offre</button>
+        </div>
+    </ng-container> -->
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal" id="myModal">
+    <br><br>
+    <br><br>
+    <br><br>
+    <div class="child">
+        <div class="col-6 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-center">nameCompany</h4>
+                    <hr>
+                    <form class="form-sample">
+                        <div class="row">
+                            <div class="col-md-6">
+
+                                <div class="form-group row">
+                                    <label>Id-Offre</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" class="typeahead"
+                                            placeholder="Enter ID Offre..." />
+                                    </div>
+                                </div>
+                                <!--We will add button browser for the image of worker in this div-->
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label>Name Worker</label>
+                                    <div id="the-basics">
+                                        <input class="typeahead" type="text" placeholder="Name Of worker...">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label>Department name</label>
+                                    <div id="bloodhound">
+                                        <select class="form-control">
+                                            <option selected="selected" disabled>His Profession</option>
+                                            <option>.......</option>
+                                            <option>.......</option>
+                                            <option>.......</option>
+                                            <option>.......</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label>Nb° H work on Company</label>
+                                    <div id="the-basics">
+                                        <input class="typeahead" type="number" placeholder="Hours work on Company...">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <label>Nb° H work on Site</label>
+                                    <div id="the-basics">
+                                        <input class="typeahead" type="number" placeholder="Hours work on Site...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col">
+                                    <label>Profit Coefficient</label>
+                                    <div id="the-basics">
+                                        <input class="typeahead" type="number" placeholder="2.5...">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label>File upload</label>
+                                    <input type="file" name="img[]" class="file-upload-default">
+                                    <div class="input-group col-xs-12">
+                                        <input type="text" class="form-control file-upload-info" disabled
+                                            placeholder="imageProfileForUser">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

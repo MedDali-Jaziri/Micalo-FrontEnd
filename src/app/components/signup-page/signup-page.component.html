@@ -1,0 +1,806 @@
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../../../assets/img/apple-icon.png" />
+  <link rel="icon" type="image/png" href="../../../assets/img/favicon.png" />
+  <title>
+    Material Bootstrap Wizard by Creative Tim | Free Boostrap Wizard
+  </title>
+
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Canonical SEO -->
+  <link rel="canonical" href="https://www.creative-tim.com/product/paper-bootstrap-wizard" />
+
+  <meta name="keywords"
+    content="wizard, bootstrap wizard, creative tim, long forms, 3 step wizard, sign up wizard, beautiful wizard, long forms wizard, wizard with validation, paper design, paper wizard bootstrap, bootstrap paper wizard" />
+  <meta name="description"
+    content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors." />
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="Paper Bootstrap Wizard by Creative Tim" />
+  <meta itemprop="description"
+    content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors." />
+  <meta itemprop="image" content="https://s3.amazonaws.com/creativetim_bucket/products/49/opt_pbw_thumbnail.jpg" />
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@creativetim" />
+  <meta name="twitter:title" content="Paper Bootstrap Wizard by Creative Tim" />
+  <meta name="twitter:description"
+    content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors." />
+  <meta name="twitter:creator" content="@creativetim" />
+  <meta name="twitter:image" content="https://s3.amazonaws.com/creativetim_bucket/products/49/opt_pbw_thumbnail.jpg" />
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Paper Bootstrap Wizard by Creative Tim | Free Boostrap Wizard" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://demos.creative-tim.com/paper-bootstrap-wizard/wizard-list-place.html" />
+  <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/49/opt_pbw_thumbnail.jpg" />
+  <meta property="og:description"
+    content="Paper Bootstrap Wizard is a fully responsive wizard that is inspired by our famous Paper Kit  and comes with 3 useful examples and 5 colors." />
+  <meta property="og:site_name" content="Creative Tim" />
+
+
+  <!-- Fonts and Icons -->
+  <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet" />
+  <!-- For country select one page signUp-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link href="https://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js",
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-NKDMSK6");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- <div class="image-container set-full-height" style="background-image: url('../../../assets/backGroundPageLogin2.jpg')"> -->
+  <div>
+
+    <!--  Made With Paper Kit  -->
+    <a href="" class="made-with-pk">
+      <div class="brand">XE</div>
+      <div class="made-with">Made with <strong>Xenophne-IT</strong></div>
+    </a>
+
+    <!--   Big container   -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+
+          <!--      Wizard container        -->
+          <div class="wizard-container">
+
+            <div class="card wizard-card" data-color="blue" id="wizardProfile">
+              <form [formGroup]="form" (ngSubmit)="clicksub()">
+                <!--        You can switch " data-color="orange" "  with one of the next bright colors: "blue", "green", "orange", "red", "azure"          -->
+                <div class="wizard-header text-center">
+                  <a href="index.html">
+                    <img src="../../../assets/img/micaloLogo.png" height="100">
+                  </a>
+                  <h3 class="wizard-title">Create your profile</h3>
+                  <p class="category">This information will let us know more about you.</p>
+                </div>
+
+                <div class="wizard-navigation">
+                  <div class="progress-with-circle">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3"
+                      style="width: 21%;"></div>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="#about" data-toggle="tab">
+                        <div class="icon-circle">
+                          <i class="ti-user"></i>
+                        </div>
+                        About
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#company" data-toggle="tab">
+                        <div class="icon-circle">
+                          <i class="ti-briefcase"></i>
+                        </div>
+                        Company
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#Payment" data-toggle="tab">
+                        <div class="icon-circle">
+                          <i class="ti-credit-card"></i>
+                        </div>
+                        Address
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tab-content">
+                  <div class="tab-pane" id="about">
+                    <div class="row">
+                      <h5 class="info-text"> Please tell us more about yourself.</h5>
+                      <div class="col-sm-4 col-sm-offset-1">
+                        <div class="picture-container">
+                          <div class="picture">
+                            <img src="../assets/img/default-avatar.jpg" class="picture-src" id="wizardPicturePreview"
+                              title="" />
+                            <input type="file" id="wizard-picture" class="form-control" (change)="onFileChange($event)">
+                          </div>
+                          <h6>Choose Picture</h6>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <label for="firstName">First Name</label>
+                          <input formControlName="firstName" id="firstName" type="text" class="form-control"
+                            name="firstName" placeholder="First Name..." required autofocus>
+                          <small *ngIf="exformFunction.firstName.invalid && exformFunction.firstName.touched"
+                            class="text-danger" required autofocus>
+                            What's your name?
+                          </small>
+                        </div>
+
+                        <div class="form-group">
+                          <label for="lastName">Last Name</label>
+                          <input formControlName="lastName" id="lastname" name="lastname" type="text"
+                            class="form-control" placeholder="Last Name..." required autofocus>
+                          <small *ngIf="exformFunction.lastName.invalid && exformFunction.lastName.touched"
+                            class="text-danger" required autofocus>
+                            last name please
+                          </small>
+                        </div>
+                      </div>
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="emailUser">Email</label>
+                          <input formControlName="emailUser" name="emailUser" type="email" class="form-control"
+                            placeholder="Email..." required autofocus>
+                          <small *ngIf="exformFunction.emailUser.invalid && exformFunction.emailUser.touched"
+                            class="text-danger" required autofocus>Check this filed!
+                          </small>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="emailUser">Password</label>
+                          <input formControlName="passwordUser" name="passwordUser" type="password" class="form-control"
+                            placeholder="Password..." required autofocus>
+                          <small *ngIf="exformFunction.passwordUser.invalid && exformFunction.passwordUser.touched"
+                            class="text-danger" required autofocus>Write a password!
+                          </small>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="phoneUser">Phone Number</label>
+                          <input formControlName="phoneUser" name="phoneUser" type="text" class="form-control" placeholder="+216 00 000 000" required
+                            autofocus>
+                          <small *ngIf="exformFunction.phoneUser.invalid && exformFunction.phoneUser.touched"
+                            class="text-danger" required autofocus>
+                            Your phone number is required !
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="tab-pane" id="company">
+                    <div class="row">
+                      <h5 class="info-text"> What are you doing? (Company) </h5>
+
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="nameCompany">Company Name</label>
+                          <input  formControlName="nameCompany" name="nameCompany" id="nameCompany" type="text" class="form-control"
+                            placeholder="Company Name..." autofocus required>
+                        </div>
+                        <small *ngIf="exformFunction.nameCompany.invalid && exformFunction.nameCompany.touched"
+                            class="text-danger" required autofocus>
+                            What's your company name !
+                          </small>
+                      </div>
+
+                      <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="companAct">Company Country</label>
+                          <select class="form-control" formControlName="country" id="country" class="form-control"
+                            autofocus required>
+                            <option class="form-control" value="  " disabled selected value>Select a country</option>
+                            <option class="form-control" class="form-control" value="AF">Afghanistan</option>
+                            <option class="form-control" value="AL" data-icon="glyphicon-music">Albania</option>
+                            <option class="form-control" value="DZ">Algeria</option>
+                            <option class="form-control" value="AS">American Samoa</option>
+                            <option class="form-control" value="AD">Andorra</option>
+                            <option class="form-control" value="AO">Angola</option>
+                            <option class="form-control" value="AI">Anguilla</option>
+                            <option class="form-control" value="AQ">Antarctica</option>
+                            <option class="form-control" value="AG">Antigua and Barbuda</option>
+                            <option class="form-control" value="AR">Argentina</option>
+                            <option class="form-control" value="AM">Armenia</option>
+                            <option class="form-control" value="AW">Aruba</option>
+                            <option class="form-control" value="AU">Australia</option>
+                            <option class="form-control" value="AT">Austria</option>
+                            <option class="form-control" value="AZ">Azerbaijan</option>
+                            <option class="form-control" value="BS">Bahamas</option>
+                            <option class="form-control" value="BH">Bahrain</option>
+                            <option class="form-control" value="BD">Bangladesh</option>
+                            <option class="form-control" value="BB">Barbados</option>
+                            <option class="form-control" value="BY">Belarus</option>
+                            <option class="form-control" value="BE">Belgium</option>
+                            <option class="form-control" value="BZ">Belize</option>
+                            <option class="form-control" value="BJ">Benin</option>
+                            <option class="form-control" value="BM">Bermuda</option>
+                            <option class="form-control" value="BT">Bhutan</option>
+                            <option class="form-control" value="BO">Bolivia</option>
+                            <option class="form-control" value="BA">Bosnia and Herzegowina</option>
+                            <option class="form-control" value="BW">Botswana</option>
+                            <option class="form-control" value="BV">Bouvet Island</option>
+                            <option class="form-control" value="BR">Brazil</option>
+                            <option class="form-control" value="IO">British Indian Ocean Territory</option>
+                            <option class="form-control" value="BN">Brunei Darussalam</option>
+                            <option class="form-control" value="BG">Bulgaria</option>
+                            <option class="form-control" value="BF">Burkina Faso</option>
+                            <option class="form-control" value="BI">Burundi</option>
+                            <option class="form-control" value="KH">Cambodia</option>
+                            <option class="form-control" value="CM">Cameroon</option>
+                            <option class="form-control" value="CA">Canada</option>
+                            <option class="form-control" value="CV">Cape Verde</option>
+                            <option class="form-control" value="KY">Cayman Islands</option>
+                            <option class="form-control" value="CF">Central African Republic</option>
+                            <option class="form-control" value="TD">Chad</option>
+                            <option class="form-control" value="CL">Chile</option>
+                            <option class="form-control" value="CN">China</option>
+                            <option class="form-control" value="CX">Christmas Island</option>
+                            <option class="form-control" value="CC">Cocos (Keeling) Islands</option>
+                            <option class="form-control" value="CO">Colombia</option>
+                            <option class="form-control" value="KM">Comoros</option>
+                            <option class="form-control" value="CG">Congo</option>
+                            <option class="form-control" value="CD">Congo, the Democratic Republic of the</option>
+                            <option class="form-control" value="CK">Cook Islands</option>
+                            <option class="form-control" value="CR">Costa Rica</option>
+                            <option class="form-control" value="CI">Cote d'Ivoire</option>
+                            <option class="form-control" value="HR">Croatia (Hrvatska)</option>
+                            <option class="form-control" value="CU">Cuba</option>
+                            <option class="form-control" value="CY">Cyprus</option>
+                            <option class="form-control" value="CZ">Czech Republic</option>
+                            <option class="form-control" value="DK">Denmark</option>
+                            <option class="form-control" value="DJ">Djibouti</option>
+                            <option class="form-control" value="DM">Dominica</option>
+                            <option class="form-control" value="DO">Dominican Republic</option>
+                            <option class="form-control" value="TP">East Timor</option>
+                            <option class="form-control" value="EC">Ecuador</option>
+                            <option class="form-control" value="EG">Egypt</option>
+                            <option class="form-control" value="SV">El Salvador</option>
+                            <option class="form-control" value="GQ">Equatorial Guinea</option>
+                            <option class="form-control" value="ER">Eritrea</option>
+                            <option class="form-control" value="EE">Estonia</option>
+                            <option class="form-control" value="ET">Ethiopia</option>
+                            <option class="form-control" value="FK">Falkland Islands (Malvinas)</option>
+                            <option class="form-control" value="FO">Faroe Islands</option>
+                            <option class="form-control" value="FJ">Fiji</option>
+                            <option class="form-control" value="FI">Finland</option>
+                            <option class="form-control" value="FR">France</option>
+                            <option class="form-control" value="FX">France, Metropolitan</option>
+                            <option class="form-control" value="GF">French Guiana</option>
+                            <option class="form-control" value="PF">French Polynesia</option>
+                            <option class="form-control" value="TF">French Southern Territories</option>
+                            <option class="form-control" value="GA">Gabon</option>
+                            <option class="form-control" value="GM">Gambia</option>
+                            <option class="form-control" value="GE">Georgia</option>
+                            <option class="form-control" value="DE">Germany</option>
+                            <option class="form-control" value="GH">Ghana</option>
+                            <option class="form-control" value="GI">Gibraltar</option>
+                            <option class="form-control" value="GR">Greece</option>
+                            <option class="form-control" value="GL">Greenland</option>
+                            <option class="form-control" value="GD">Grenada</option>
+                            <option class="form-control" value="GP">Guadeloupe</option>
+                            <option class="form-control" value="GU">Guam</option>
+                            <option class="form-control" value="GT">Guatemala</option>
+                            <option class="form-control" value="GN">Guinea</option>
+                            <option class="form-control" value="GW">Guinea-Bissau</option>
+                            <option class="form-control" value="GY">Guyana</option>
+                            <option class="form-control" value="HT">Haiti</option>
+                            <option class="form-control" value="HM">Heard and Mc Donald Islands</option>
+                            <option class="form-control" value="VA">Holy See (Vatican City State)</option>
+                            <option class="form-control" value="HN">Honduras</option>
+                            <option class="form-control" value="HK">Hong Kong</option>
+                            <option class="form-control" value="HU">Hungary</option>
+                            <option class="form-control" value="IS">Iceland</option>
+                            <option class="form-control" value="IN">India</option>
+                            <option class="form-control" value="ID">Indonesia</option>
+                            <option class="form-control" value="IR">Iran (Islamic Republic of)</option>
+                            <option class="form-control" value="IQ">Iraq</option>
+                            <option class="form-control" value="IE">Ireland</option>
+                            <option class="form-control" value="IL">Israel</option>
+                            <option class="form-control" value="IT">Italy</option>
+                            <option class="form-control" value="JM">Jamaica</option>
+                            <option class="form-control" value="JP">Japan</option>
+                            <option class="form-control" value="JO">Jordan</option>
+                            <option class="form-control" value="KZ">Kazakhstan</option>
+                            <option class="form-control" value="KE">Kenya</option>
+                            <option class="form-control" value="KI">Kiribati</option>
+                            <option class="form-control" value="KP">Korea, Democratic People's Republic of</option>
+                            <option class="form-control" value="KR">Korea, Republic of</option>
+                            <option class="form-control" value="KW">Kuwait</option>
+                            <option class="form-control" value="KG">Kyrgyzstan</option>
+                            <option class="form-control" value="LA">Lao People's Democratic Republic</option>
+                            <option class="form-control" value="LV">Latvia</option>
+                            <option class="form-control" value="LB">Lebanon</option>
+                            <option class="form-control" value="LS">Lesotho</option>
+                            <option class="form-control" value="LR">Liberia</option>
+                            <option class="form-control" value="LY">Libyan Arab Jamahiriya</option>
+                            <option class="form-control" value="LI">Liechtenstein</option>
+                            <option class="form-control" value="LT">Lithuania</option>
+                            <option class="form-control" value="LU">Luxembourg</option>
+                            <option class="form-control" value="MO">Macau</option>
+                            <option class="form-control" value="MK">Macedonia, The Former Yugoslav Republic of</option>
+                            <option class="form-control" value="MG">Madagascar</option>
+                            <option class="form-control" value="MW">Malawi</option>
+                            <option class="form-control" value="MY">Malaysia</option>
+                            <option class="form-control" value="MV">Maldives</option>
+                            <option class="form-control" value="ML">Mali</option>
+                            <option class="form-control" value="MT">Malta</option>
+                            <option class="form-control" value="MH">Marshall Islands</option>
+                            <option class="form-control" value="MQ">Martinique</option>
+                            <option class="form-control" value="MR">Mauritania</option>
+                            <option class="form-control" value="MU">Mauritius</option>
+                            <option class="form-control" value="YT">Mayotte</option>
+                            <option class="form-control" value="MX">Mexico</option>
+                            <option class="form-control" value="FM">Micronesia, Federated States of</option>
+                            <option class="form-control" value="MD">Moldova, Republic of</option>
+                            <option class="form-control" value="MC">Monaco</option>
+                            <option class="form-control" value="MN">Mongolia</option>
+                            <option class="form-control" value="MS">Montserrat</option>
+                            <option class="form-control" value="MA">Morocco</option>
+                            <option class="form-control" value="MZ">Mozambique</option>
+                            <option class="form-control" value="MM">Myanmar</option>
+                            <option class="form-control" value="NA">Namibia</option>
+                            <option class="form-control" value="NR">Nauru</option>
+                            <option class="form-control" value="NP">Nepal</option>
+                            <option class="form-control" value="NL">Netherlands</option>
+                            <option class="form-control" value="AN">Netherlands Antilles</option>
+                            <option class="form-control" value="NC">New Caledonia</option>
+                            <option class="form-control" value="NZ">New Zealand</option>
+                            <option class="form-control" value="NI">Nicaragua</option>
+                            <option class="form-control" value="NE">Niger</option>
+                            <option class="form-control" value="NG">Nigeria</option>
+                            <option class="form-control" value="NU">Niue</option>
+                            <option class="form-control" value="NF">Norfolk Island</option>
+                            <option class="form-control" value="MP">Northern Mariana Islands</option>
+                            <option class="form-control" value="NO">Norway</option>
+                            <option class="form-control" value="OM">Oman</option>
+                            <option class="form-control" value="PK">Pakistan</option>
+                            <option class="form-control" value="PW">Palau</option>
+                            <option class="form-control" value="PA">Panama</option>
+                            <option class="form-control" value="PG">Papua New Guinea</option>
+                            <option class="form-control" value="PY">Paraguay</option>
+                            <option class="form-control" value="PE">Peru</option>
+                            <option class="form-control" value="PH">Philippines</option>
+                            <option class="form-control" value="PN">Pitcairn</option>
+                            <option class="form-control" value="PL">Poland</option>
+                            <option class="form-control" value="PT">Portugal</option>
+                            <option class="form-control" value="PR">Puerto Rico</option>
+                            <option class="form-control" value="QA">Qatar</option>
+                            <option class="form-control" value="RE">Reunion</option>
+                            <option class="form-control" value="RO">Romania</option>
+                            <option class="form-control" value="RU">Russian Federation</option>
+                            <option class="form-control" value="RW">Rwanda</option>
+                            <option class="form-control" value="KN">Saint Kitts and Nevis</option>
+                            <option class="form-control" value="LC">Saint LUCIA</option>
+                            <option class="form-control" value="VC">Saint Vincent and the Grenadines</option>
+                            <option class="form-control" value="WS">Samoa</option>
+                            <option class="form-control" value="SM">San Marino</option>
+                            <option class="form-control" value="ST">Sao Tome and Principe</option>
+                            <option class="form-control" value="SA">Saudi Arabia</option>
+                            <option class="form-control" value="SN">Senegal</option>
+                            <option class="form-control" value="SC">Seychelles</option>
+                            <option class="form-control" value="SL">Sierra Leone</option>
+                            <option class="form-control" value="SG">Singapore</option>
+                            <option class="form-control" value="SK">Slovakia (Slovak Republic)</option>
+                            <option class="form-control" value="SI">Slovenia</option>
+                            <option class="form-control" value="SB">Solomon Islands</option>
+                            <option class="form-control" value="SO">Somalia</option>
+                            <option class="form-control" value="ZA">South Africa</option>
+                            <option class="form-control" value="GS">South Georgia and the South Sandwich Islands
+                            </option>
+                            <option class="form-control" value="ES">Spain</option>
+                            <option class="form-control" value="LK">Sri Lanka</option>
+                            <option class="form-control" value="SH">St. Helena</option>
+                            <option class="form-control" value="PM">St. Pierre and Miquelon</option>
+                            <option class="form-control" value="SD">Sudan</option>
+                            <option class="form-control" value="SR">Suriname</option>
+                            <option class="form-control" value="SJ">Svalbard and Jan Mayen Islands</option>
+                            <option class="form-control" value="SZ">Swaziland</option>
+                            <option class="form-control" value="SE">Sweden</option>
+                            <option class="form-control" value="CH">Switzerland</option>
+                            <option class="form-control" value="SY">Syrian Arab Republic</option>
+                            <option class="form-control" value="TW">Taiwan, Province of China</option>
+                            <option class="form-control" value="TJ">Tajikistan</option>
+                            <option class="form-control" value="TZ">Tanzania, United Republic of</option>
+                            <option class="form-control" value="TH">Thailand</option>
+                            <option class="form-control" value="TG">Togo</option>
+                            <option class="form-control" value="TK">Tokelau</option>
+                            <option class="form-control" value="TO">Tonga</option>
+                            <option class="form-control" value="TT">Trinidad and Tobago</option>
+                            <option class="form-control" value="TN">Tunisia</option>
+                            <option class="form-control" value="TR">Turkey</option>
+                            <option class="form-control" value="TM">Turkmenistan</option>
+                            <option class="form-control" value="TC">Turks and Caicos Islands</option>
+                            <option class="form-control" value="TV">Tuvalu</option>
+                            <option class="form-control" value="UG">Uganda</option>
+                            <option class="form-control" value="UA">Ukraine</option>
+                            <option class="form-control" value="AE">United Arab Emirates</option>
+                            <option class="form-control" value="GB">United Kingdom</option>
+                            <option class="form-control" value="US">United States</option>
+                            <option class="form-control" value="UM">United States Minor Outlying Islands</option>
+                            <option class="form-control" value="UY">Uruguay</option>
+                            <option class="form-control" value="UZ">Uzbekistan</option>
+                            <option class="form-control" value="VU">Vanuatu</option>
+                            <option class="form-control" value="VE">Venezuela</option>
+                            <option class="form-control" value="VN">Viet Nam</option>
+                            <option class="form-control" value="VG">Virgin Islands (British)</option>
+                            <option class="form-control" value="VI">Virgin Islands (U.S.)</option>
+                            <option class="form-control" value="WF">Wallis and Futuna Islands</option>
+                            <option class="form-control" value="EH">Western Sahara</option>
+                            <option class="form-control" value="YE">Yemen</option>
+                            <option class="form-control" value="YU">Yugoslavia</option>
+                            <option class="form-control" value="ZM">Zambia</option>
+                            <option class="form-control" value="ZW">Zimbabwe</option>
+                          </select>
+                        </div>
+                        <small *ngIf="exformFunction.country.invalid && exformFunction.country.touched"
+                          class="text-danger" required autofocus>
+                          What's of your compant !
+                        </small>
+                      </div>
+                      <div class="col-sm-5">
+                        <div class="form-group">
+                          <label for="companAct">Company Activity</label>
+                          <select formControlName="companAct" id="companAct" class="form-control" autofocus required>
+                            <option class="form-control" disabled selected value>Select a activity</option>
+                            <option class="form-control" value="Industry">Industry</option>
+                            <option class="form-control" value="Business services">Business services</option>
+                            <option class="form-control" value="Particular services">Particular services</option>
+                            <option class="form-control" value="Consulting and training">Consulting and training</option>
+                            <option class="form-control" value="E-commerce">E-commerce</option>
+                            <option class="form-control" value="Wholesale">Wholesale</option>
+                            <option class="form-control" value="Retail business">Retail business</option>
+                          </select>
+                        </div>
+                        <small *ngIf="exformFunction.companAct.invalid && exformFunction.companAct.touched"
+                          class="text-danger" required autofocus>
+                          Chose the activity is required !
+                        </small>
+                      </div>
+
+
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="companAct">Number of worker</label>
+                          <select formControlName="numberWorker" class="form-control" id='numberWorker'
+                            name='numberWorker' autofocus required>
+                            <option disabled selected value></option>
+                            <option class="form-control" value="I work alone">I work alone</option>
+                            <option class="form-control" value="1-3 employees">1-3 employees</option>
+                            <option class="form-control" value="3-10 employees">3-10 employees</option>
+                            <option class="form-control" value="More than 10 employees">More than 10 employees</option>
+                          </select>
+                        </div>
+                        <small *ngIf="exformFunction.numberWorker.invalid && exformFunction.numberWorker.touched"
+                          class="text-danger" required autofocus>
+                          Chose the activity is required !
+                        </small>
+                      </div>
+
+
+                      <div class="col-sm-10 col-sm-offset-1">
+                        <div class="form-group">
+                          <label for="currency">Currency</label>
+
+                          <select formControlName="currency" id="currency" name="currency" class="form-control"
+                            autofocus required>
+                            <option disabled selected value></option>
+                            <option class="form-control" value="AFN">Afghan Afghani</option>
+                            <option class="form-control" value="ALL">Albanian Lek</option>
+                            <option class="form-control" value="DZD">Algerian Dinar</option>
+                            <option class="form-control" value="AOA">Angolan Kwanza</option>
+                            <option class="form-control" value="ARS">Argentine Peso</option>
+                            <option class="form-control" value="AMD">Armenian Dram</option>
+                            <option class="form-control" value="AWG">Aruban Florin</option>
+                            <option class="form-control" value="AUD">Australian Dollar</option>
+                            <option class="form-control" value="AZN">Azerbaijani Manat</option>
+                            <option class="form-control" value="BSD">Bahamian Dollar</option>
+                            <option class="form-control" value="BHD">Bahraini Dinar</option>
+                            <option class="form-control" value="BDT">Bangladeshi Taka</option>
+                            <option class="form-control" value="BBD">Barbadian Dollar</option>
+                            <option class="form-control" value="BYR">Belarusian Ruble</option>
+                            <option class="form-control" value="BEF">Belgian Franc</option>
+                            <option class="form-control" value="BZD">Belize Dollar</option>
+                            <option class="form-control" value="BMD">Bermudan Dollar</option>
+                            <option class="form-control" value="BTN">Bhutanese Ngultrum</option>
+                            <option class="form-control" value="BTC">Bitcoin</option>
+                            <option class="form-control" value="BOB">Bolivian Boliviano</option>
+                            <option class="form-control" value="BAM">Bosnia-Herzegovina Convertible Mark</option>
+                            <option class="form-control" value="BWP">Botswanan Pula</option>
+                            <option class="form-control" value="BRL">Brazilian Real</option>
+                            <option class="form-control" value="GBP">British Pound Sterling</option>
+                            <option class="form-control" value="BND">Brunei Dollar</option>
+                            <option class="form-control" value="BGN">Bulgarian Lev</option>
+                            <option class="form-control" value="BIF">Burundian Franc</option>
+                            <option class="form-control" value="KHR">Cambodian Riel</option>
+                            <option class="form-control" value="CAD">Canadian Dollar</option>
+                            <option class="form-control" value="CVE">Cape Verdean Escudo</option>
+                            <option class="form-control" value="KYD">Cayman Islands Dollar</option>
+                            <option class="form-control" value="XOF">CFA Franc BCEAO</option>
+                            <option class="form-control" value="XAF">CFA Franc BEAC</option>
+                            <option class="form-control" value="XPF">CFP Franc</option>
+                            <option class="form-control" value="CLP">Chilean Peso</option>
+                            <option class="form-control" value="CNY">Chinese Yuan</option>
+                            <option class="form-control" value="COP">Colombian Peso</option>
+                            <option class="form-control" value="KMF">Comorian Franc</option>
+                            <option class="form-control" value="CDF">Congolese Franc</option>
+                            <option class="form-control" value="CRC">Costa Rican ColÃ³n</option>
+                            <option class="form-control" value="HRK">Croatian Kuna</option>
+                            <option class="form-control" value="CUC">Cuban Convertible Peso</option>
+                            <option class="form-control" value="CZK">Czech Republic Koruna</option>
+                            <option class="form-control" value="DKK">Danish Krone</option>
+                            <option class="form-control" value="DJF">Djiboutian Franc</option>
+                            <option class="form-control" value="DOP">Dominican Peso</option>
+                            <option class="form-control" value="XCD">East Caribbean Dollar</option>
+                            <option class="form-control" value="EGP">Egyptian Pound</option>
+                            <option class="form-control" value="ERN">Eritrean Nakfa</option>
+                            <option class="form-control" value="EEK">Estonian Kroon</option>
+                            <option class="form-control" value="ETB">Ethiopian Birr</option>
+                            <option class="form-control" value="EUR">Euro</option>
+                            <option class="form-control" value="FKP">Falkland Islands Pound</option>
+                            <option class="form-control" value="FJD">Fijian Dollar</option>
+                            <option class="form-control" value="GMD">Gambian Dalasi</option>
+                            <option class="form-control" value="GEL">Georgian Lari</option>
+                            <option class="form-control" value="DEM">German Mark</option>
+                            <option class="form-control" value="GHS">Ghanaian Cedi</option>
+                            <option class="form-control" value="GIP">Gibraltar Pound</option>
+                            <option class="form-control" value="GRD">Greek Drachma</option>
+                            <option class="form-control" value="GTQ">Guatemalan Quetzal</option>
+                            <option class="form-control" value="GNF">Guinean Franc</option>
+                            <option class="form-control" value="GYD">Guyanaese Dollar</option>
+                            <option class="form-control" value="HTG">Haitian Gourde</option>
+                            <option class="form-control" value="HNL">Honduran Lempira</option>
+                            <option class="form-control" value="HKD">Hong Kong Dollar</option>
+                            <option class="form-control" value="HUF">Hungarian Forint</option>
+                            <option class="form-control" value="ISK">Icelandic KrÃ³na</option>
+                            <option class="form-control" value="INR">Indian Rupee</option>
+                            <option class="form-control" value="IDR">Indonesian Rupiah</option>
+                            <option class="form-control" value="IRR">Iranian Rial</option>
+                            <option class="form-control" value="IQD">Iraqi Dinar</option>
+                            <option class="form-control" value="ILS">Israeli New Sheqel</option>
+                            <option class="form-control" value="ITL">Italian Lira</option>
+                            <option class="form-control" value="JMD">Jamaican Dollar</option>
+                            <option class="form-control" value="JPY">Japanese Yen</option>
+                            <option class="form-control" value="JOD">Jordanian Dinar</option>
+                            <option class="form-control" value="KZT">Kazakhstani Tenge</option>
+                            <option class="form-control" value="KES">Kenyan Shilling</option>
+                            <option class="form-control" value="KWD">Kuwaiti Dinar</option>
+                            <option class="form-control" value="KGS">Kyrgystani Som</option>
+                            <option class="form-control" value="LAK">Laotian Kip</option>
+                            <option class="form-control" value="LVL">Latvian Lats</option>
+                            <option class="form-control" value="LBP">Lebanese Pound</option>
+                            <option class="form-control" value="LSL">Lesotho Loti</option>
+                            <option class="form-control" value="LRD">Liberian Dollar</option>
+                            <option class="form-control" value="LYD">Libyan Dinar</option>
+                            <option class="form-control" value="LTL">Lithuanian Litas</option>
+                            <option class="form-control" value="MOP">Macanese Pataca</option>
+                            <option class="form-control" value="MKD">Macedonian Denar</option>
+                            <option class="form-control" value="MGA">Malagasy Ariary</option>
+                            <option class="form-control" value="MWK">Malawian Kwacha</option>
+                            <option class="form-control" value="MYR">Malaysian Ringgit</option>
+                            <option class="form-control" value="MVR">Maldivian Rufiyaa</option>
+                            <option class="form-control" value="MRO">Mauritanian Ouguiya</option>
+                            <option class="form-control" value="MUR">Mauritian Rupee</option>
+                            <option class="form-control" value="MXN">Mexican Peso</option>
+                            <option class="form-control" value="MDL">Moldovan Leu</option>
+                            <option class="form-control" value="MNT">Mongolian Tugrik</option>
+                            <option class="form-control" value="MAD">Moroccan Dirham</option>
+                            <option class="form-control" value="MZM">Mozambican Metical</option>
+                            <option class="form-control" value="MMK">Myanmar Kyat</option>
+                            <option class="form-control" value="NAD">Namibian Dollar</option>
+                            <option class="form-control" value="NPR">Nepalese Rupee</option>
+                            <option class="form-control" value="ANG">Netherlands Antillean Guilder</option>
+                            <option class="form-control" value="TWD">New Taiwan Dollar</option>
+                            <option class="form-control" value="NZD">New Zealand Dollar</option>
+                            <option class="form-control" value="NIO">Nicaraguan CÃ³rdoba</option>
+                            <option class="form-control" value="NGN">Nigerian Naira</option>
+                            <option class="form-control" value="KPW">North Korean Won</option>
+                            <option class="form-control" value="NOK">Norwegian Krone</option>
+                            <option class="form-control" value="OMR">Omani Rial</option>
+                            <option class="form-control" value="PKR">Pakistani Rupee</option>
+                            <option class="form-control" value="PAB">Panamanian Balboa</option>
+                            <option class="form-control" value="PGK">Papua New Guinean Kina</option>
+                            <option class="form-control" value="PYG">Paraguayan Guarani</option>
+                            <option class="form-control" value="PEN">Peruvian Nuevo Sol</option>
+                            <option class="form-control" value="PHP">Philippine Peso</option>
+                            <option class="form-control" value="PLN">Polish Zloty</option>
+                            <option class="form-control" value="QAR">Qatari Rial</option>
+                            <option class="form-control" value="RON">Romanian Leu</option>
+                            <option class="form-control" value="RUB">Russian Ruble</option>
+                            <option class="form-control" value="RWF">Rwandan Franc</option>
+                            <option class="form-control" value="SVC">Salvadoran ColÃ³n</option>
+                            <option class="form-control" value="WST">Samoan Tala</option>
+                            <option class="form-control" value="SAR">Saudi Riyal</option>
+                            <option class="form-control" value="RSD">Serbian Dinar</option>
+                            <option class="form-control" value="SCR">Seychellois Rupee</option>
+                            <option class="form-control" value="SLL">Sierra Leonean Leone</option>
+                            <option class="form-control" value="SGD">Singapore Dollar</option>
+                            <option class="form-control" value="SKK">Slovak Koruna</option>
+                            <option class="form-control" value="SBD">Solomon Islands Dollar</option>
+                            <option class="form-control" value="SOS">Somali Shilling</option>
+                            <option class="form-control" value="ZAR">South African Rand</option>
+                            <option class="form-control" value="KRW">South Korean Won</option>
+                            <option class="form-control" value="XDR">Special Drawing Rights</option>
+                            <option class="form-control" value="LKR">Sri Lankan Rupee</option>
+                            <option class="form-control" value="SHP">St. Helena Pound</option>
+                            <option class="form-control" value="SDG">Sudanese Pound</option>
+                            <option class="form-control" value="SRD">Surinamese Dollar</option>
+                            <option class="form-control" value="SZL">Swazi Lilangeni</option>
+                            <option class="form-control" value="SEK">Swedish Krona</option>
+                            <option class="form-control" value="CHF">Swiss Franc</option>
+                            <option class="form-control" value="SYP">Syrian Pound</option>
+                            <option class="form-control" value="STD">São Tomé and Príncipe Dobra</option>
+                            <option class="form-control" value="TJS">Tajikistani Somoni</option>
+                            <option class="form-control" value="TZS">Tanzanian Shilling</option>
+                            <option class="form-control" value="THB">Thai Baht</option>
+                            <option class="form-control" value="TOP">Tongan pa'anga</option>
+                            <option class="form-control" value="TTD">Trinidad & Tobago Dollar</option>
+                            <option class="form-control" value="TND">Tunisian Dinar</option>
+                            <option class="form-control" value="TRY">Turkish Lira</option>
+                            <option class="form-control" value="TMT">Turkmenistani Manat</option>
+                            <option class="form-control" value="UGX">Ugandan Shilling</option>
+                            <option class="form-control" value="UAH">Ukrainian Hryvnia</option>
+                            <option class="form-control" value="AED">United Arab Emirates Dirham</option>
+                            <option class="form-control" value="UYU">Uruguayan Peso</option>
+                            <option class="form-control" value="USD">US Dollar</option>
+                            <option class="form-control" value="UZS">Uzbekistan Som</option>
+                            <option class="form-control" value="VUV">Vanuatu Vatu</option>
+                            <option class="form-control" value="VEF">Venezuelan BolÃ­var</option>
+                            <option class="form-control" value="VND">Vietnamese Dong</option>
+                            <option class="form-control" value="YER">Yemeni Rial</option>
+                            <option class="form-control" value="ZMK">Zambian Kwacha</option>
+                          </select>
+                        </div>
+                        <small *ngIf="exformFunction.currency.invalid && exformFunction.currency.touched"
+                          class="text-danger" required autofocus>
+                          Chose a currency your company use it !
+                        </small>
+                      </div>
+
+                    </div>
+
+                  </div>
+                  <div class="tab-pane" id="Payment">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h5 class="info-text" style="white-space: pre-line">Choose a plan Choose <br>
+                          The plan that contains your needs
+                          <br> Pricing
+                        </h5>
+
+                        <div>
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-3 col-sm-6">
+                                <div class="pricingTable10">
+                                  <div class="pricingTable-header">
+                                    <h3 class="heading">Business</h3>
+                                    <span class="price-value">
+                                    </span>
+                                  </div>
+                                  <div class="pricing-content">
+                                    <ul>
+                                      <li>.........................</li>
+                                      <li>.........................</li>
+                                      <li>2 Days</li>
+                                    </ul>
+                                    <a (click)="getFreeAccount()" class="read">Get For Free</a>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-sm-6">
+                                <div class="pricingTable10">
+                                  <div class="pricingTable-header">
+                                    <h3 class="heading">Premium</h3>
+                                    <span class="price-value">
+                                      <span class="currency">TND</span>&nbsp;&nbsp;&nbsp;30
+                                      <span class="month">/mo</span>
+                                    </span>
+                                  </div>
+                                  <div class="pricing-content">
+                                    <ul>
+                                      <li>.........................</li>
+                                      <li>.........................</li>
+                                      <li>.........................</li>
+                                      <li>30 Days</li>
+                                    </ul>
+                                    <a href="#" class="read">Buy Now</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-3 col-sm-6">
+                                <div class="pricingTable10">
+                                  <div class="pricingTable-header">
+                                    <h3 class="heading">Extra</h3>
+                                    <span class="price-value">
+                                      <span class="currency">TND</span>&nbsp;&nbsp;&nbsp;300
+                                      <span class="month">/mo</span>
+                                    </span>
+                                  </div>
+                                  <div class="pricing-content">
+                                    <ul>
+                                      <li>.........................</li>
+                                      <li>.........................</li>
+                                      <li>.........................</li>
+                                      <li>1 year</li>
+                                    </ul>
+                                    <a href="#" class="read">Buy Now</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+                <div class="wizard-footer">
+                  <div class="pull-right">
+                    <input type='submit' class='btn btn-next btn-fill btn-info btn-wd' name='next' value='Next' />
+                    <input type='button' (click)="signUp()" class='btn btn-finish btn-fill btn-info btn-wd' name='finish' value='Sign Up' />
+                  </div>
+
+                  <div class="pull-left">
+                    <input type='button' class='btn btn-previous btn-default btn-wd' (click)="Previous()" name='previous' value='Previous' />
+                  </div>
+                  <div class="clearfix"></div>
+                  <div class="text-center">
+                    <label class="category">Already have an account? <a href="#" [routerLink]="['/PageSignIn']">Login</a></label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> <!-- wizard container -->
+        </div>
+      </div><!-- end row -->
+    </div> <!--  big container -->
+
+  </div>
+</body>
